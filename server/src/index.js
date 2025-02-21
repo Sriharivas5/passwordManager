@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-const router = require("./Routes/route");
-require("./db/connectin");
+const router = require("../Routes/route");
+require("../db/connectin");
 const cors = require("cors");
 app.use(cors());
 

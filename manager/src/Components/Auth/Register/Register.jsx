@@ -3,6 +3,9 @@ import './Register.css';
 import { useNavigate, Link } from 'react-router';
 import axios from "axios"
 
+import { LuEye } from "react-icons/lu";
+import { LuEyeClosed } from "react-icons/lu";
+
 const Register = () => {
   const navigate = useNavigate()
 
@@ -12,6 +15,7 @@ const Register = () => {
   const [isPosted, setIsPosted] = useState(false)
   const [inputOtp, setInputOtp] = useState(null)
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,11 +47,11 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/api/register", data);
+      const response = await axios.post("https://passwordmanager-d81l.onrender.com/api/register", data);
       if (response.status === 201) {
         setIsPosted(true); // Show "Verify OTP" button
         // Fetch OTP data from backend
-        const usersData = await axios.get("http://localhost:3001/api/get-users");
+        const usersData = await axios.get("https://passwordmanager-d81l.onrender.com/api/get-users");
         // console.log("Users Data:", usersData.data); // Handle OTP data as needed
 
         let registeredUser = await usersData.data.filter((item) => {
@@ -76,7 +80,7 @@ const Register = () => {
     let userEmail = localStorage.getItem("userEmail")
 
 
-    const otps = await axios.get("http://localhost:3001/api/getotps")
+    const otps = await axios.get("https://passwordmanager-d81l.onrender.com/api/getotps")
     let otp = otps.data.filter((item) => {
       return item.email == userEmail
     })
@@ -107,13 +111,22 @@ const Register = () => {
           value={email}
           onChange={handleChange}
         />
-        <input
-          type="text"
-          placeholder="Password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-        />
+        <div style={{ position: "relative" ,width:"80%"}} >
+          <input
+            type="text"
+            placeholder="Password"
+            name="password"
+            value={password}
+            onChange={handleChange}
+            id="registerPassword"
+          />
+          {showPassword ?
+            <LuEye id="eyeIcon" onClick={() => setShowPassword(!showPassword)} />
+            :
+            <LuEyeClosed id="eyeIcon" onClick={() => setShowPassword(!showPassword)} />
+          }
+        </div>
+
         {isPosted && <input type="text" placeholder='Enter OTP' onChange={(e) => setInputOtp(e.target.value)} />}
         {
           isPosted ?

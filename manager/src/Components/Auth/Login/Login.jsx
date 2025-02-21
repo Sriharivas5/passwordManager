@@ -101,13 +101,13 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3001/api/login", {
+      const response = await axios.post("https://passwordmanager-d81l.onrender.com/api/login", {
         fullname,
         password,
       });
 
       if (response.status === 200) {
-        const usersData = await axios.get("http://localhost:3001/api/get-users");
+        const usersData = await axios.get("https://passwordmanager-d81l.onrender.com/api/get-users");
 
         let registeredUser = usersData.data.find((user) => user.fullname === fullname);
 

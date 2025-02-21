@@ -16,7 +16,7 @@ function App() {
     formData.append("file", file); // Change key to "file" (match backend)
 
     try {
-      await axios.post("http://localhost:3001/api/uploadDocs", formData, {
+      await axios.post("https://passwordmanager-d81l.onrender.com/api/uploadDocs", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       fetchFiles(); // Refresh after upload
@@ -27,7 +27,7 @@ function App() {
 
   const fetchFiles = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/getDocs");
+      const response = await axios.get("https://passwordmanager-d81l.onrender.com/api/getDocs");
       setFiles(response.data);
       console.log(response.data)
     } catch (error) {
@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   const handleDelete = async (id) => {
-  await axios.delete(`http://localhost:3001/api/deleteImage/${id}`)
+  await axios.delete(`https://passwordmanager-d81l.onrender.com/api/deleteImage/${id}`)
     window.location.reload()
   }
 

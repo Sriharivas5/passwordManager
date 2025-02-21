@@ -13,7 +13,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     let userId = localStorage.getItem("userId")
-    let data = await axios.post("http://localhost:3001/api/postPasswords", {
+    let data = await axios.post("https://passwordmanager-d81l.onrender.com/api/postPasswords", {
       userId: userId,
       website: websiteName,
       username: userName,
@@ -40,14 +40,14 @@ function App() {
           onChange={(e) => setUserName(e.target.value)}
           placeholder="Enter username"
         />
-        <textarea   type="text"
+        <textarea type="text"
           value={password}
           onChange={(e) => setpassword(e.target.value)}
           placeholder="Enter password " ></textarea>
 
 
 
-        <input type="submit" id='submit'/>
+        <input type="submit" id='submit' />
       </form>
 
 

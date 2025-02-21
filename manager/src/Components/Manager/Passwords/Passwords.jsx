@@ -15,7 +15,7 @@ const Passwords = () => {
 
   const [isModalActive, setIsModalActive] = useState(false)
   useEffect(() => {
-    axios.get("http://localhost:3001/api/getPasswords").then(res => {
+    axios.get("https://passwordmanager-d81l.onrender.com/api/getPasswords").then(res => {
       console.log(res.data)
       setPasswordSData(res.data)
     })
@@ -27,7 +27,7 @@ const Passwords = () => {
   })
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:3001/api/deletePassword/${id}`)
+    axios.delete(`https://passwordmanager-d81l.onrender.com/api/deletePassword/${id}`)
     window.location.reload(true);
   }
 
@@ -39,7 +39,7 @@ const Passwords = () => {
 
   const handleSave = async (requestedId, title, description) => {
     axios
-      .put(`http://localhost:3001/api/updatePassword/${requestedId}`, {
+      .put(`https://passwordmanager-d81l.onrender.com/api/updatePassword/${requestedId}`, {
         username: title,
         password: description,
       })

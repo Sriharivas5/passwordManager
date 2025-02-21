@@ -3,7 +3,7 @@ const router = express.Router();
 const passwordcontroller = require("../controllers/password");
 const userControlers = require("../controllers/authController");
 
-const { resendOtp, getOtps } = require("../Controllers/otpController");
+const { resendOtp, getOtps } = require("../controllers/otpController");
 
 
 const docsController = require("../controllers/docsController")

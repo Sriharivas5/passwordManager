@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.login {
+  background-image: url("../../../assets/6079425.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #361e7c;
+}
+.login form {
+  width: 50%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: rgba(103, 78, 115, 0.272);
+  border-radius: 10px;
+  border: 2px solid rgba(150, 124, 253, 0.495);
+}
+@media(max-width:900px){
+  .login form {
+    width: 90%;
+   ;
+  }
+}
+.login input {
+  border: none;
+  outline: none;
+  padding: 10px;
+  width: clamp(230px, 75vw, 450px);
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: rgba(240, 248, 255, 0.695);
+}
+#submit {
+  width: clamp(70px, 10vw, 150px);
+}
+
+#eyeIcon{
+  position: absolute;
+  right: 7px;
+  top: 30%;
+}
+.error-message{
+  color: rgb(255, 26, 26);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}

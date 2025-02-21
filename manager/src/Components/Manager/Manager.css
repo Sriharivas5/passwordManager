@@ -1,0 +1,29 @@
+.manager {
+  width: 100vw;
+  max-height: 100vh;
+  background-image: url("../../assets/6079425.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  background-attachment: fixed;
+}
+.navbar {
+  max-height: 10vh;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  padding: 10px 0 5px 0;
+}
+
+.buttons h1 {
+  color: rgb(138, 109, 151);
+  color: #5e4e8f;
+
+}
+#active {
+  color: rgb(237, 177, 252);
+  color: #361e7c;
+
+}

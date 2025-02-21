@@ -1,0 +1,35 @@
+.Add {
+  width: 100%;
+  background-color: rgba(31, 31, 31, 0.487);
+  backdrop-filter: blur(4px);
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.form input {
+  outline: none;
+  border: none;
+  padding: 10px 5px;
+  border-radius: 5px;
+  width: clamp(230px, 75vw, 450px);
+}
+
+.form textarea {
+  outline: none;
+  border: none;
+  padding: 10px 5px;
+  border-radius: 5px;
+  width: clamp(230px, 75vw, 450px);
+}
+.form #submit {
+  max-width: 100px;
+}
